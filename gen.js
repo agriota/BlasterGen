@@ -65,7 +65,7 @@ mines.forEach(function(mine) {
 });
 
 //player lines
-ctx.lineWidth = "20"
+ctx.lineWidth = "35"
 ctx.strokeStyle = "rgba(255,50,100,0.75)"
 for(var i = 0; i < 5; i++) {
   p1 = players[i]
