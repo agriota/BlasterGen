@@ -64,21 +64,12 @@ mines.forEach(function(mine) {
   ctx.fill();
 });
 
-//players
+//player lines
+ctx.lineWidth = "20"
+ctx.strokeStyle = "rgba(255,50,100,0.75)"
 for(var i = 0; i < 5; i++) {
   p1 = players[i]
 
-  ctx.fillStyle = "rgba(0,255,0,0.5)"
-  ctx.lineWidth = "1"
-  ctx.strokeStyle = "black"
-  ctx.beginPath();
-  ctx.arc(p1[0],p1[1],20,0,2*Math.PI);
-  ctx.closePath();
-  ctx.stroke();
-  ctx.fill();
-
-  ctx.lineWidth = "20"
-  ctx.strokeStyle = "rgba(255,50,100,0.75)"
   for (var j = i; j < 5; j++) {
     var p2 = players[j];
     //calculate start point?
@@ -92,6 +83,18 @@ for(var i = 0; i < 5; i++) {
     ctx.stroke();
   }
 }
+
+ctx.fillStyle = "rgba(0,200,0,1)"
+ctx.lineWidth = "1"
+ctx.strokeStyle = "black"
+
+players.forEach(function(p1) {
+  ctx.beginPath();
+  ctx.arc(p1[0],p1[1],20,0,2*Math.PI);
+  ctx.closePath();
+  ctx.stroke();
+  ctx.fill();
+});
 
 //erase outside the circle
 ctx.fillStyle = "white";
